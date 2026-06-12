@@ -52,8 +52,8 @@ export default function Hero() {
             LinkedIn
           </a>
           <a
-            href="/curriculo.pdf"
-            download="Alan_Goncalves_Curriculo.pdf"
+            href="/Alan_Goncalves_Curriculo.pdf"
+            download
             className="btn-ghost"
           >
             <FileText size={16} />
