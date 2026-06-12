@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0d0f14;
+    color: #e8eaf0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0f14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252b3b;
+    border-radius: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .section {
+    @apply max-w-5xl mx-auto px-8 py-20;
+  }
+
+  .section-label {
+    @apply font-mono text-[11px] text-accent tracking-[0.15em] uppercase mb-4;
+  }
+
+  .section-title {
+    @apply font-mono text-[28px] font-semibold text-fg mb-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-md font-mono text-[13px] font-medium tracking-wide transition-all duration-200 border;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white border-accent hover:bg-accent-dim hover:border-accent-dim;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-muted border-border2 hover:text-fg hover:border-muted;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
